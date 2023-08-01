@@ -1,3 +1,5 @@
+# 转载与 https://github.com/mjl0602/flutter_tiktok，非作者原创
+
 # flutter_tiktok
 
 仿写抖音的flutter app。主要实现了看视频功能，可以非常流畅的刷视频，左右滑，点小爱心。  
