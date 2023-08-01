@@ -2,7 +2,7 @@ import 'package:flutter_tiktok/pages/homePage.dart';
 import 'package:flutter_tiktok/style/style.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
+import 'package:leancloud_storage/leancloud.dart';
 void main() {
   /// 自定义报错页面
   if (kReleaseMode) {
@@ -17,6 +17,10 @@ void main() {
       );
     };
   }
+  LeanCloud.initialize(
+      '{{egMQ9Slas39wLicwoDsKyefZ-gzGzoHsz}}', '{{Ct7JRP1bWhatDtXnEuqM5j4o}}',
+      server: 'https://egmq9sla.lc-cn-n1-shared.com',
+      queryCache: new LCQueryCache());
   runApp(MyApp());
 }
 

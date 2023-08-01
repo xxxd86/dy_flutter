@@ -72,7 +72,8 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             const Text('没有账号?'),
             GestureDetector(
-              child: const Text('点击注册', style: TextStyle(color: Colors.green)),
+              child: const Text(
+                  '点击注册', style: TextStyle(color: Colors.green)),
               onTap: () {
                 print("点击注册");
               },
@@ -87,22 +88,26 @@ class _LoginPageState extends State<LoginPage> {
     return ButtonBar(
       alignment: MainAxisAlignment.center,
       children: _loginMethod
-          .map((item) => Builder(builder: (context) {
-        return IconButton(
-            icon: Icon(item['icon'],
-                color: Theme.of(context).iconTheme.color),
-            onPressed: () {
-              //TODO: 第三方登录方法
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                    content: Text('${item['title']}登录'),
-                    action: SnackBarAction(
-                      label: '取消',
-                      onPressed: () {},
-                    )),
-              );
-            });
-      }))
+          .map((item) =>
+          Builder(builder: (context) {
+            return IconButton(
+                icon: Icon(item['icon'],
+                    color: Theme
+                        .of(context)
+                        .iconTheme
+                        .color),
+                onPressed: () {
+                  //TODO: 第三方登录方法
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                        content: Text('${item['title']}登录'),
+                        action: SnackBarAction(
+                          label: '取消',
+                          onPressed: () {},
+                        )),
+                  );
+                });
+          }))
           .toList(),
     );
   }
@@ -127,7 +132,10 @@ class _LoginPageState extends State<LoginPage> {
               shape: MaterialStateProperty.all(const StadiumBorder(
                   side: BorderSide(style: BorderStyle.none)))),
           child: Text('Login',
-              style: Theme.of(context).primaryTextTheme.headline5),
+              style: Theme
+                  .of(context)
+                  .primaryTextTheme
+                  .headline5),
           onPressed: () {
             // 表单校验通过才会继续执行
             if ((_formKey.currentState as FormState).validate()) {
@@ -135,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
               //TODO 执行登录方法
               print('email: $_email, password: $_password');
               //校验是否存在与数据库，返回
-               Navigator.pop(context);
+              Navigator.pop(context);
             }
           },
         ),
@@ -151,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
         child: TextButton(
           onPressed: () {
             // Navigator.pop(context);
-            print("忘记密码");//跳转更改密码
+            print("忘记密码"); //跳转更改密码
           },
           child: const Text("忘记密码？",
               style: TextStyle(fontSize: 14, color: Colors.grey)),
@@ -182,7 +190,10 @@ class _LoginPageState extends State<LoginPage> {
                   _isObscure = !_isObscure;
                   _eyeColor = (_isObscure
                       ? Colors.grey
-                      : Theme.of(context).iconTheme.color)!;
+                      : Theme
+                      .of(context)
+                      .iconTheme
+                      .color)!;
                 });
               },
             )));
@@ -216,12 +227,19 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget buildTitle() {
-    return const Padding(
-        padding: EdgeInsets.all(8),
-        child: Text(
-          'Login',
-          style: TextStyle(fontSize: 42),
-        ));
-  }
+    //   return const Padding(
+    //       padding: EdgeInsets.all(16),
+    //       child: Text(
+    //         'Login',
+    //         style: TextStyle(fontSize: 42),
+    //       ));
+    // }
+    return Container(
 
+        child: Text(
+          "Login",
+          style: TextStyle(fontSize: 42),
+        )
+    );
+  }
 }
