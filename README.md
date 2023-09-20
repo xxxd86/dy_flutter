@@ -1,4 +1,4 @@
-# 转载与 https://github.com/mjl0602/flutter_tiktok，非作者原创,作者在上面进行了一定的修改
+# 转载与 https://github.com/mjl0602/flutter_tiktok，非作者原创框架,作者在上面进行了一定的修改
 
 # flutter_tiktok
 
